@@ -1,0 +1,45 @@
+{% extends 'base/header.html' %}
+
+{% block content %}
+
+
+
+<h1 class="my-4">Libros de la Biblioteca</h1>
+
+<div class="clas">
+    
+ </div>
+
+<div class="row">
+    <table class="table table-striped">
+        <thead>
+            <th>Id </th>
+            <th>Titulo</th>
+            <th>Descripcion</th>
+            <th>Publicacion</th>
+            <th>Accion</th>
+        </thead>
+
+        <tbody>
+            {% for libro in libros %}
+                <td>{{forloop.counter}}</td>
+                <td>{{libro.titulo}}</td>
+                <td>{{libro.descripcion}}</td>
+                <td>{{libro.fecha_publicacion | date:"M d, Y"}}</td>
+                <th>
+                    <button class="btn btn-primary btn-xs">
+                        Ver
+                    </button>
+                </th>
+            
+        </tbody>
+        
+
+        {% endfor %}
+
+    </table>
+    
+    
+
+</div>
+{% endblock %}
