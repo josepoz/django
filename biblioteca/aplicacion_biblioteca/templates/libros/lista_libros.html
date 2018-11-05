@@ -2,8 +2,6 @@
 
 {% block content %}
 
-
-
 <h1 class="my-4">Libros de la Biblioteca</h1>
 
 <div class="clas">
@@ -27,9 +25,9 @@
                 <td>{{libro.descripcion}}</td>
                 <td>{{libro.fecha_publicacion | date:"M d, Y"}}</td>
                 <th>
-                    <button class="btn btn-primary btn-xs">
+                    <a href="{% url 'detalle' pk=libro.pk %}" class="btn btn-primary btn-xs">
                         Ver
-                    </button>
+                    </a>
                 </th>
             
         </tbody>
@@ -37,9 +35,7 @@
 
         {% endfor %}
 
-    </table>
-    
-    
+    </table>   
 
 </div>
 {% endblock %}
